@@ -82,7 +82,7 @@ impl SimpleComponent for App {
 }
 
 fn main() {
-    let app = RelmApp::new("com.example.word2ipa");
+    let app = RelmApp::new("com.mohfy.word2ipa");
     app.run::<App>(());
 }
 
@@ -103,10 +103,6 @@ fn word_to_ipa(word: &str) -> Result<String, Box<dyn Error>> {
             .into())
         }
     } else {
-        Err(io::Error::new(
-            io::ErrorKind::NotFound,
-            "No entries found.".to_string(),
-        )
-        .into())
+        Err(io::Error::new(io::ErrorKind::NotFound, "No entries found.".to_string()).into())
     }
 }
