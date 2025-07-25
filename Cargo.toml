@@ -1,5 +1,5 @@
 [package]
-name = "chatty-gui"
+name = "word2ipa"
 version = "0.1.0"
 edition = "2024"
 
