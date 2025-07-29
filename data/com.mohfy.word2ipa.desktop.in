@@ -1,11 +1,11 @@
 [Desktop Entry]
-Name=Word 2 IPA
+Name=Word to IPA
 Comment=Converts written words into International Phonetic Alphabet (IPA) transcriptions.
 Exec=word2ipa
 Icon=com.mohfy.word2ipa
 Terminal=false
 Type=Application
-Categories=Utility;Education;
+Categories=Utility;Education;Science;
 StartupWMClass=WordToIpaConverter
 Keywords=GTK;phonetics;transcription
 StartupNotify=true

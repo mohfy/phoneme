@@ -41,8 +41,8 @@
             "buildsystem" : "meson",
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "file:///home/xander/Projects"
+		  "type": "dir",
+		  "path": "../."
                 }
             ],
             "config-opts" : [

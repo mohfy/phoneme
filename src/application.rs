@@ -1,5 +1,5 @@
 /* application.rs
- *
+*
  * Copyright 2025 mohfy, Xander
  *
  * This program is free software: you can redistribute it and/or modify
