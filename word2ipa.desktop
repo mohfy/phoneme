@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Word to IPA
+Comment=Converts written words into International Phonetic Alphabet (IPA) transcriptions.
+Exec=word2ipa
+Icon=com.mohfy.word2ipa
+Type=Application
+Categories=Utility;Education;Science;
+Terminal=false
+StartupNotify=true
+StartupWMClass=WordToIpaConverter
