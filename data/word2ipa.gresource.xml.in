@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/com/mohfy/word2ipa">
+    <file>en_US.json</file>
+    <file>ipa_lookup_table.json</file>
+  </gresource>
+</gresources>
