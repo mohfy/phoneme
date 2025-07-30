@@ -1,14 +1,17 @@
 [package]
 name = "word2ipa"
-version = "0.4.0"
+version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-glib = "0.21.0"
+gettext-rs = { version = "0.7", features = ["gettext-system"] }
+gtk = { version = "0.9", package = "gtk4", features = ["gnome_47"] }
 relm4 = { version = "0.9.1", features = ["libadwaita", "gnome_45"] }
 relm4-components = { version = "0.9.1", features = ["libadwaita"] }
 serde = { version = "1.0.219", features = ["derive"] }
 serde_json = "1.0.141"
 
-[package.metadata.appimage]
-assets = ["data", "word2ipa.desktop", "com.mohfy.word2ipa.svg"]
+[dependencies.adw]
+package = "libadwaita"
+version = "0.7"
+features = ["v1_6"]

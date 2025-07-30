@@ -1,4 +1,25 @@
+ /*
+ * Copyright 2025 mohfy, Xander
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 use relm4::RelmApp;
+mod config;
+use gtk::{gio, glib};
 
 mod word2ipa {
     use gtk::prelude::*;
@@ -94,23 +115,25 @@ mod word2ipa {
     }
 
     fn word_to_ipa(word: &str) -> Result<String, Box<dyn Error>> {
-        let file_path = "data/en_US.json";
-        let file = File::open(file_path)?;
-        let reader = BufReader::new(file);
-        let dictionary: Dictionary = serde_json::from_reader(reader)?;
+        let resource_data = gtk::gio::resources_lookup_data(
+            "/com/mohfy/word2ipa/en_US.json",
+            gtk::gio::ResourceLookupFlags::NONE,
+        ).map_err(|e| format!("Failed to load resource: {}", e))?;
+
+        let json_str = std::str::from_utf8(&resource_data)
+            .map_err(|e| format!("Invalid UTF-8 in resource: {}", e))?;
+
+        let dictionary: Dictionary = serde_json::from_str(json_str)
+            .map_err(|e| format!("Failed to parse JSON: {}", e))?;
 
         if let Some(first_map) = dictionary.entries.get(0) {
             if let Some(ipa) = first_map.get(&word.to_lowercase()) {
                 Ok(ipa.clone())
             } else {
-                Err(io::Error::new(
-                    io::ErrorKind::NotFound,
-                    format!("Word '{}' not found.", word),
-                )
-                .into())
+                Err(format!("Word '{}' not found.", word).into())
             }
         } else {
-            Err(io::Error::new(io::ErrorKind::NotFound, "Dictionary format error.").into())
+            Err("Dictionary format error.".into())
         }
     }
 }
@@ -201,9 +224,17 @@ mod ipa_dictionary {
     }
 
     fn load_ipa_entries() -> Result<Vec<IpaEntry>, Box<dyn std::error::Error>> {
-        let file = File::open("data/ipa_lookup_table.json")?;
-        let reader = BufReader::new(file);
-        let entries = serde_json::from_reader(reader)?;
+        let resource_data = gtk::gio::resources_lookup_data(
+            "/com/mohfy/word2ipa/ipa_lookup_table.json",
+            gtk::gio::ResourceLookupFlags::NONE,
+        ).map_err(|e| format!("Failed to load IPA resource: {}", e))?;
+
+        let json_str = std::str::from_utf8(&resource_data)
+            .map_err(|e| format!("Invalid UTF-8 in IPA resource: {}", e))?;
+
+        let entries = serde_json::from_str(json_str)
+            .map_err(|e| format!("Failed to parse IPA JSON: {}", e))?;
+
         Ok(entries)
     }
 }
@@ -275,6 +306,10 @@ mod app {
 }
 
 fn main() {
-    let app = RelmApp::new("word2ipa");
+    let res = gio::Resource::load(config::PKGDATADIR.to_owned() + "/word2ipa.gresource")
+        .expect("Failed to initialize the resource file.");
+    gio::resources_register(&res);
+
+    let app = RelmApp::new("com.mohfy.word2ipa");
     app.run::<app::App>(());
 }

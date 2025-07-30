@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=com.mohfy.word2ipa
+Exec=@bindir@/word2ipa --gapplication-service
