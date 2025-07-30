@@ -1,4 +1,4 @@
- /*
+/*
  * Copyright 2025 mohfy, Xander
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,6 +22,7 @@ mod config;
 use gtk::{gio, glib};
 
 mod word2ipa {
+    use adw::prelude::{ActionRowExt, PreferencesGroupExt, PreferencesRowExt};
     use gtk::prelude::*;
     use relm4::prelude::*;
     use serde::Deserialize;
@@ -39,6 +40,8 @@ mod word2ipa {
     pub struct Word2ipaModel {
         buffer: gtk::EntryBuffer,
         ipa_result: String,
+        history: Vec<(String, String)>,
+        group: adw::PreferencesGroup,
     }
 
     #[derive(Debug)]
@@ -76,6 +79,12 @@ mod word2ipa {
                     set_margin_all: 5,
                     add_css_class: "title-1",
                 },
+                adw::PreferencesPage {
+                    #[name(group)]
+                    adw::PreferencesGroup {
+                        set_title: "History",
+                    }
+                }
             }
         }
 
@@ -85,12 +94,16 @@ mod word2ipa {
             sender: ComponentSender<Self>,
         ) -> ComponentParts<Self> {
             let buffer = gtk::EntryBuffer::new(None::<String>);
-            let model = Word2ipaModel {
+
+            let mut model = Word2ipaModel {
                 ipa_result: "IPA translation will appear here.".to_string(),
                 buffer,
+                history: Vec::new(),
+                group: adw::PreferencesGroup::new(),
             };
-
             let widgets = view_output!();
+            model.group = widgets.group.clone();
+
             ComponentParts { model, widgets }
         }
 
@@ -103,7 +116,17 @@ mod word2ipa {
                         return;
                     }
                     match word_to_ipa(&word) {
-                        Ok(ipa) => self.ipa_result = ipa,
+                        Ok(ipa) => {
+                            self.ipa_result = ipa.clone();
+                            self.history.push((word.clone(), ipa.clone()));
+                            if let Some((word, ipa)) = &self.history.last() {
+                                let row = adw::ActionRow::new();
+                                row.set_css_classes(&["title-3"]);
+                                row.set_title(ipa);
+                                row.set_subtitle(word);
+                                self.group.add(&row);
+                            }
+                        }
                         Err(err) => {
                             self.ipa_result = format!("Error: {}", err);
                             eprintln!("error: {}", err);
@@ -118,13 +141,14 @@ mod word2ipa {
         let resource_data = gtk::gio::resources_lookup_data(
             "/com/mohfy/word2ipa/en_US.json",
             gtk::gio::ResourceLookupFlags::NONE,
-        ).map_err(|e| format!("Failed to load resource: {}", e))?;
+        )
+        .map_err(|e| format!("Failed to load resource: {}", e))?;
 
         let json_str = std::str::from_utf8(&resource_data)
             .map_err(|e| format!("Invalid UTF-8 in resource: {}", e))?;
 
-        let dictionary: Dictionary = serde_json::from_str(json_str)
-            .map_err(|e| format!("Failed to parse JSON: {}", e))?;
+        let dictionary: Dictionary =
+            serde_json::from_str(json_str).map_err(|e| format!("Failed to parse JSON: {}", e))?;
 
         if let Some(first_map) = dictionary.entries.get(0) {
             if let Some(ipa) = first_map.get(&word.to_lowercase()) {
@@ -143,8 +167,6 @@ mod ipa_dictionary {
     use relm4::adw;
     use relm4::prelude::*;
     use serde::Deserialize;
-    use std::fs::File;
-    use std::io::BufReader;
 
     // Required for methods like set_title, set_subtitle, add
     use adw::prelude::{ActionRowExt, PreferencesGroupExt, PreferencesRowExt};
@@ -227,7 +249,8 @@ mod ipa_dictionary {
         let resource_data = gtk::gio::resources_lookup_data(
             "/com/mohfy/word2ipa/ipa_lookup_table.json",
             gtk::gio::ResourceLookupFlags::NONE,
-        ).map_err(|e| format!("Failed to load IPA resource: {}", e))?;
+        )
+        .map_err(|e| format!("Failed to load IPA resource: {}", e))?;
 
         let json_str = std::str::from_utf8(&resource_data)
             .map_err(|e| format!("Invalid UTF-8 in IPA resource: {}", e))?;
