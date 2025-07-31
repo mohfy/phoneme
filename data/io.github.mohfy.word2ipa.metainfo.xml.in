@@ -32,22 +32,22 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/mohfy/word_to_ipa/2bb675bc176cfd3f8b32e10e2b618e53528eeba8/screenshots/transcriber.png</image>
+      <image>https://raw.githubusercontent.com/mohfy/word2ipa/2bb675bc176cfd3f8b32e10e2b618e53528eeba8/screenshots/transcriber.png</image>
       <caption>Main Page</caption>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/mohfy/word_to_ipa/2bb675bc176cfd3f8b32e10e2b618e53528eeba8/screenshots/alphabit-dict.png</image>
+      <image>https://raw.githubusercontent.com/mohfy/word2ipa/2bb675bc176cfd3f8b32e10e2b618e53528eeba8/screenshots/alphabit-dict.png</image>
       <caption>Alphabit dictionary</caption>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/mohfy/word_to_ipa/2bb675bc176cfd3f8b32e10e2b618e53528eeba8/screenshots/multi-lang.png</image>
+      <image>https://raw.githubusercontent.com/mohfy/word2ipa/2bb675bc176cfd3f8b32e10e2b618e53528eeba8/screenshots/multi-lang.png</image>
       <caption>Multi-language Support!</caption>
     </screenshot>
   </screenshots>
 
   <releases>
     <release version="0.4.0" date="2025-06-29">
-      <url type="details">https://github.com/mohfy/word_to_ipa/releases/tag/v0.4.0</url>
+      <url type="details">https://github.com/mohfy/word2ipa/releases/tag/v0.4.0</url>
       <description translate="no">
         <p>New update featuring:</p>
         <ul>

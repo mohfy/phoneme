@@ -40,8 +40,8 @@
             "buildsystem" : "meson",
             "sources" : [
                 {
-		  "type": "git",
-		  "path": "https://github.com/mohfy/word2ipa",
+		  "type": "dir",
+		  "path": "../.",
 		  "branch": "main"
                 }
             ]
