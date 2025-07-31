@@ -31,9 +31,12 @@ mod word2ipa {
     use std::fs::File;
     use std::io::{self, BufReader};
 
+    //****************** edit Language here **************
+    const DICT_LANG: &str = "fr_FR";
+    //****************** edit Language here **************
+
     #[derive(Debug, Deserialize)]
     struct Dictionary {
-        #[serde(rename = "en_US")]
         entries: Vec<HashMap<String, String>>,
     }
 
@@ -139,7 +142,7 @@ mod word2ipa {
 
     fn word_to_ipa(word: &str) -> Result<String, Box<dyn Error>> {
         let resource_data = gtk::gio::resources_lookup_data(
-            "/com/mohfy/word2ipa/en_US.json",
+            &format!("/com/mohfy/word2ipa/dicts/{DICT_LANG}.json"),
             gtk::gio::ResourceLookupFlags::NONE,
         )
         .map_err(|e| format!("Failed to load resource: {}", e))?;
@@ -222,7 +225,7 @@ mod ipa_dictionary {
 
             for entry in &model.entries {
                 let row = adw::ActionRow::new();
-                row.set_css_classes(&["title-3"]);
+                row.set_css_classes(&["title-4"]);
                 row.set_title(&format!("{} – {}", entry.symbol, entry.sound));
                 row.set_subtitle(&entry.description);
 
@@ -247,7 +250,7 @@ mod ipa_dictionary {
 
     fn load_ipa_entries() -> Result<Vec<IpaEntry>, Box<dyn std::error::Error>> {
         let resource_data = gtk::gio::resources_lookup_data(
-            "/com/mohfy/word2ipa/ipa_lookup_table.json",
+            "/com/mohfy/word2ipa/dicts/ipa_lookup_table.json",
             gtk::gio::ResourceLookupFlags::NONE,
         )
         .map_err(|e| format!("Failed to load IPA resource: {}", e))?;
@@ -313,7 +316,6 @@ mod app {
         ) -> ComponentParts<Self> {
             let word2ipa = Word2ipaModel::builder().launch(()).detach();
             let ipa_dict = IpaDictionaryModel::builder().launch(()).detach();
-
             let widgets = view_output!();
 
             let model = App {

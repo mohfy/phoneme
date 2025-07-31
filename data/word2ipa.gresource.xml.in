@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/com/mohfy/word2ipa">
-    <file>en_US.json</file>
-    <file>ipa_lookup_table.json</file>
+    <file>dicts/ar.json</file>
+    <file>dicts/de.json</file>
+    <file>dicts/en_UK.json</file>
+    <file>dicts/en_US.json</file>
+    <file>dicts/eo.json</file>
+    <file>dicts/es_ES.json</file>
+    <file>dicts/es_MX.json</file>
+    <file>dicts/fa.json</file>
+    <file>dicts/fi.json</file>
+    <file>dicts/fr_QC.json</file>
+    <file>dicts/fr_FR.json</file>
+    <file>dicts/ja.json</file>
+    <file>dicts/jam.json</file>
+    <file>dicts/ma.json</file>
+    <file>dicts/nb.json</file>
+    <file>dicts/or.json</file>
+    <file>dicts/sv.json</file>
+    <file>dicts/sw.json</file>
+    <file>dicts/vi_C.json</file>
+    <file>dicts/vi_N.json</file>
+    <file>dicts/vi_S.json</file>
+    <file>dicts/yue.json</file>
+    <file>dicts/zh_hans.json</file>
+    <file>dicts/zh_hant.json</file>
+    <file>dicts/ipa_lookup_table.json</file>
   </gresource>
 </gresources>
