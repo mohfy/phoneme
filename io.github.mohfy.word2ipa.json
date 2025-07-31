@@ -16,7 +16,6 @@
     "build-options" : {
         "append-path" : "/usr/lib/sdk/rust-stable/bin",
         "build-args" : [
-            "--share=network"
         ],
         "env" : {
             "RUST_BACKTRACE" : "1",
@@ -41,12 +40,10 @@
             "buildsystem" : "meson",
             "sources" : [
                 {
-		  "type": "dir",
-		  "path": "../."
+		  "type": "git",
+		  "path": "https://github.com/mohfy/word_to_ipa",
+		  "branch": "main"
                 }
-            ],
-            "config-opts" : [
-                "--libdir=lib"
             ]
         }
     ]

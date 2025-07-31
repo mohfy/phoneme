@@ -32,12 +32,16 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/mohfy/word_to_ipa/refs/heads/master/screenshots/first%20page.png</image>
-      <caption>First Page</caption>
+      <image>https://raw.githubusercontent.com/mohfy/word_to_ipa/b9ed83389d4f36afa88baf0bab71a2e19ed840cd/screenshots/transcriber.png</image>
+      <caption>Main Page</caption>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/mohfy/word_to_ipa/refs/heads/master/screenshots/first%20page.png</image>
-      <caption>Second Page</caption>
+      <image>https://raw.githubusercontent.com/mohfy/word_to_ipa/b9ed83389d4f36afa88baf0bab71a2e19ed840cd/screenshots/alphabit-dict.png</image>
+      <caption>Alphabit dictionary</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/mohfy/word_to_ipa/b9ed83389d4f36afa88baf0bab71a2e19ed840cd/screenshots/multi-lang.png</image>
+      <caption>Multi-language Support!</caption>
     </screenshot>
   </screenshots>
 
