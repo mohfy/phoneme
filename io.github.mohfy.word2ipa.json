@@ -41,7 +41,7 @@
             "sources" : [
                 {
 		  "type": "git",
-		  "path": "https://github.com/mohfy/word_to_ipa",
+		  "path": "https://github.com/mohfy/word2ipa",
 		  "branch": "main"
                 }
             ]
