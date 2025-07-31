@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="data/icons/hicolor/scalable/apps/com.mohfy.word2ipa.svg" alt="Word2IPA Logo" height="128">
+  <img src="data/icons/hicolor/scalable/apps/io.github.mohfy.word2ipa.svg" alt="Word2IPA Logo" height="128">
 </p>
 
 <h1 align="center">Word2IPA</h1>
@@ -45,7 +45,7 @@ Word2IPA lets you look up individual words or paste entire phrases and see how t
 ### GNOME Builder
 1. Install Builder from [Flathub](https://flathub.org/apps/org.gnome.Builder).
 2. Click the **Clone Repository** button at the bottom right and enter the repository URL.
-3. Once cloned, locate the dropdown menu next to the `com.mohfy.word2ipa.json` text at the top of the screen.
+3. Once cloned, locate the dropdown menu next to the `io.github.mohfy.word2ipa.json` text at the top of the screen.
 4. Use the dropdown to press **Build** to compile the project. From the same menu, you can also **Run** the project or **Export** it as a Flatpak bundle.
 
 ### AppImage

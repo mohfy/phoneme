@@ -1,6 +1,6 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
-data/com.mohfy.word2ipa.desktop.in
-data/com.mohfy.word2ipa.metainfo.xml.in
-data/com.mohfy.word2ipa.gschema.xml
+data/io.github.mohfy.word2ipa.desktop.in
+data/io.github.mohfy.word2ipa.metainfo.xml.in
+data/io.github.mohfy.word2ipa.gschema.xml
 src/window.ui

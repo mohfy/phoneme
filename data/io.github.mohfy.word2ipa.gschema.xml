@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="word2ipa">
-	<schema id="com.mohfy.word2ipa" path="/com/mohfy/word2ipa/">
+	<schema id="io.github.mohfy.word2ipa" path="/com/mohfy/word2ipa/">
 	</schema>
 </schemalist>

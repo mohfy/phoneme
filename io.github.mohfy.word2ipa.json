@@ -1,5 +1,5 @@
 {
-    "id" : "com.mohfy.word2ipa",
+    "id" : "io.github.mohfy.word2ipa",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "48",
     "sdk" : "org.gnome.Sdk",

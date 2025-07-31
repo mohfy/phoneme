@@ -99,7 +99,7 @@ impl Word2ipaApplication {
         let window = self.active_window().unwrap();
         let about = adw::AboutDialog::builder()
             .application_name("word2ipa")
-            .application_icon("com.mohfy.word2ipa")
+            .application_icon("io.github.mohfy.word2ipa")
             .developer_name("Xander")
             .version(VERSION)
             .developers(vec!["Xander"])

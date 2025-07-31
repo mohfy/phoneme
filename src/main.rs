@@ -335,6 +335,6 @@ fn main() {
         .expect("Failed to initialize the resource file.");
     gio::resources_register(&res);
 
-    let app = RelmApp::new("com.mohfy.word2ipa");
+    let app = RelmApp::new("io.github.mohfy.word2ipa");
     app.run::<app::App>(());
 }
