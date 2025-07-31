@@ -1302,7 +1302,7 @@ dependencies = [
 
 [[package]]
 name = "word2ipa"
-version = "0.1.0"
+version = "0.7.0"
 dependencies = [
  "gettext-rs",
  "gtk4",
