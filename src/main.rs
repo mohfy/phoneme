@@ -32,7 +32,7 @@ mod word2ipa {
     use std::io::{self, BufReader};
 
     //****************** edit Language here **************
-    const DICT_LANG: &str = "fr_FR";
+    const DICT_LANG: &str = "en_US";
     //****************** edit Language here **************
 
     #[derive(Debug, Deserialize)]
