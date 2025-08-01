@@ -14,9 +14,9 @@
     <name>Mohfy</name>
   </developer>
 
-  <url type="homepage">https://github.com/mohfy/word_to_ipa</url>
-  <url type="vcs-browser">https://github.com/mohfy/word_to_ipa</url>
-  <url type="bugtracker">https://github.com/mohfy/word_to_ipa/issues</url>
+  <url type="homepage">https://github.com/mohfy/word2ipa</url>
+  <url type="vcs-browser">https://github.com/mohfy/word2ipa</url>
+  <url type="bugtracker">https://github.com/mohfy/word2ipa/issues</url>
   <translation type="gettext">word2ipa</translation>
   <!-- All graphical applications having a desktop file must have this tag in the MetaInfo.
      If this is present, appstreamcli compose will pull icons, keywords and categories from the desktop file. -->
