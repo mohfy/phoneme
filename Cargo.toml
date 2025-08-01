@@ -4,7 +4,6 @@ version = "0.7.0"
 edition = "2021"
 
 [dependencies]
-gettext-rs = { version = "0.7", features = ["gettext-system"] }
 gtk = { version = "0.9", package = "gtk4", features = ["gnome_47"] }
 relm4 = { version = "0.9.1", features = ["libadwaita", "gnome_45"] }
 relm4-components = { version = "0.9.1", features = ["libadwaita"] }
