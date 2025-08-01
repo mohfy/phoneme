@@ -37,8 +37,9 @@ Word2IPA lets you look up individual words or paste entire phrases and see how t
 
 ## Screenshots
 <p align="center">
-  <img src="screenshots/first page.png" alt="first page screenshot" style="width:45%; margin-right: 5%;">
-  <img src="screenshots/second page.png" alt="second page screenshot" style="width:45%;">
+  <img src="screenshots/transcriber.png" alt="Main Page" style="width:45%; margin-right: 5%;">
+  <img src="screenshots/alphabit-dict.png" alt="Alphabit dictionary" style="width:45%;">
+  <img src="screenshots/multi-lang.png" alt="Multi-language Support!" style="width:45%;">
 </p>
 
 ## How 2 Build
