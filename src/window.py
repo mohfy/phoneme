@@ -46,9 +46,15 @@ class Word2ipaWindow(Adw.ApplicationWindow):
         ipa_dict_json = Gio.resources_lookup_data(f"/io/github/mohfy/word2ipa/dicts/ipa_lookup_table.json", Gio.ResourceLookupFlags.NONE).get_data().decode("utf-8")
         ipa_data = json.loads(ipa_dict_json)
         for ipa_info in ipa_data:
-            ipa_info_row = Adw.ActionRow()
+            ipa_info_row = Adw.ExpanderRow()
             ipa_info_row.set_title(ipa_info["symbol"])
             ipa_info_row.set_subtitle(ipa_info["sound"])
+
+            for id, example in enumerate(ipa_info["examples"]):
+                example_row = Adw.ActionRow()
+                example_row.set_title(f'{example} => {ipa_info["ipa_examples"][id]}')
+                ipa_info_row.add_row(example_row)
+
             self.ipa_dict_list.add(ipa_info_row)
 
     @Gtk.Template.Callback()

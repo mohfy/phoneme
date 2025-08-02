@@ -2,162 +2,277 @@
   {
     "symbol": "iː",
     "sound": "long e",
-    "description": "like 'ee' in 'see'",
     "examples": ["see", "fleece", "seat"],
     "ipa_examples": ["/siː/", "/fliːs/", "/siːt/"]
   },
   {
     "symbol": "ɪ",
     "sound": "short i",
-    "description": "like 'i' in 'bit'",
     "examples": ["bit", "kit", "ship"],
     "ipa_examples": ["/bɪt/", "/kɪt/", "/ʃɪp/"]
   },
   {
     "symbol": "e",
     "sound": "short e",
-    "description": "like 'e' in 'dress'",
     "examples": ["dress", "bed", "head"],
     "ipa_examples": ["/dres/", "/bed/", "/hɛd/"]
   },
   {
     "symbol": "æ",
     "sound": "short a",
-    "description": "like 'a' in 'cat'",
     "examples": ["cat", "bat", "sad"],
     "ipa_examples": ["/kæt/", "/bæt/", "/sæd/"]
   },
   {
     "symbol": "ʌ",
     "sound": "short u",
-    "description": "like 'u' in 'cup'",
     "examples": ["cup", "luck", "sun"],
     "ipa_examples": ["/kʌp/", "/lʌk/", "/sʌn/"]
   },
   {
     "symbol": "ɑː",
     "sound": "long ah",
-    "description": "like 'a' in 'father' (British)",
     "examples": ["father", "calm", "car"],
     "ipa_examples": ["/ˈfɑːðə/", "/kɑːm/", "/kɑː/"]
   },
   {
     "symbol": "ɒ",
     "sound": "short o",
-    "description": "like 'o' in 'lot' (British)",
     "examples": ["lot", "not", "hot"],
     "ipa_examples": ["/lɒt/", "/nɒt/", "/hɒt/"]
   },
   {
     "symbol": "ɔː",
     "sound": "long aw",
-    "description": "like 'aw' in 'thought'",
     "examples": ["thought", "law", "saw"],
     "ipa_examples": ["/θɔːt/", "/lɔː/", "/sɔː/"]
   },
   {
     "symbol": "ʊ",
     "sound": "short u",
-    "description": "like 'u' in 'foot'",
     "examples": ["foot", "put", "good"],
     "ipa_examples": ["/fʊt/", "/pʊt/", "/ɡʊd/"]
   },
   {
     "symbol": "uː",
     "sound": "long oo",
-    "description": "like 'oo' in 'goose'",
     "examples": ["goose", "blue", "true"],
     "ipa_examples": ["/ɡuːs/", "/bluː/", "/truː/"]
   },
   {
     "symbol": "ə",
     "sound": "schwa",
-    "description": "like 'a' in 'about'",
     "examples": ["about", "sofa", "comma"],
     "ipa_examples": ["/əˈbaʊt/", "/ˈsəʊfə/", "/ˈkɒmə/"]
   },
   {
+    "symbol": "ɜː",
+    "sound": "er/ir/ur",
+    "examples": ["bird", "learn", "nurse"],
+    "ipa_examples": ["/bɜːd/", "/lɜːn/", "/nɜːs/"]
+  },
+  {
     "symbol": "eɪ",
     "sound": "long a",
-    "description": "like 'ay' in 'say'",
     "examples": ["say", "day", "play"],
     "ipa_examples": ["/seɪ/", "/deɪ/", "/pleɪ/"]
   },
   {
     "symbol": "aɪ",
     "sound": "long i",
-    "description": "like 'i' in 'my'",
     "examples": ["my", "cry", "high"],
     "ipa_examples": ["/maɪ/", "/kraɪ/", "/haɪ/"]
   },
   {
     "symbol": "ɔɪ",
     "sound": "oy",
-    "description": "like 'oy' in 'boy'",
     "examples": ["boy", "toy", "joy"],
     "ipa_examples": ["/bɔɪ/", "/tɔɪ/", "/dʒɔɪ/"]
   },
   {
     "symbol": "aʊ",
     "sound": "ow",
-    "description": "like 'ow' in 'now'",
     "examples": ["now", "how", "cow"],
     "ipa_examples": ["/naʊ/", "/haʊ/", "/kaʊ/"]
   },
   {
     "symbol": "əʊ",
-    "sound": "long o (BrE)",
-    "description": "like 'o' in 'go' (British)",
+    "sound": "long o (BrE/GA)",
     "examples": ["go", "no", "show"],
     "ipa_examples": ["/ɡəʊ/", "/nəʊ/", "/ʃəʊ/"]
   },
   {
-    "symbol": "tʃ",
-    "sound": "ch",
-    "description": "like 'ch' in 'chip'",
-    "examples": ["chip", "cheese", "chair"],
-    "ipa_examples": ["/tʃɪp/", "/tʃiːz/", "/tʃeə/"]
+    "symbol": "ɪə",
+    "sound": "ea",
+    "examples": ["near", "here", "fear"],
+    "ipa_examples": ["/nɪə/", "/hɪə/", "/fɪə/"]
   },
   {
-    "symbol": "dʒ",
-    "sound": "j",
-    "description": "like 'j' in 'judge'",
-    "examples": ["judge", "jam", "giant"],
-    "ipa_examples": ["/dʒʌdʒ/", "/dʒæm/", "/ˈdʒaɪənt/"]
+    "symbol": "eə",
+    "sound": "ai",
+    "examples": ["hair", "chair", "where"],
+    "ipa_examples": ["/heə/", "/tʃeə/", "/weə/"]
+  },
+  {
+    "symbol": "ʊə",
+    "sound": "our",
+    "examples": ["tour", "pure", "cure"],
+    "ipa_examples": ["/tʊə/", "/pjʊə/", "/kjʊə/"]
+  },
+  {
+    "symbol": "p",
+    "sound": "p",
+    "examples": ["pat", "apple", "cup"],
+    "ipa_examples": ["/pæt/", "/ˈæpl/", "/kʌp/"]
+  },
+  {
+    "symbol": "b",
+    "sound": "b",
+    "examples": ["bat", "baby", "job"],
+    "ipa_examples": ["/bæt/", "/ˈbeɪbi/", "/dʒɒb/"]
+  },
+  {
+    "symbol": "t",
+    "sound": "t",
+    "examples": ["top", "button", "cat"],
+    "ipa_examples": ["/tɒp/", "/ˈbʌtn/", "/kæt/"]
+  },
+  {
+    "symbol": "d",
+    "sound": "d",
+    "examples": ["dog", "ladder", "sad"],
+    "ipa_examples": ["/dɒɡ/", "/ˈlædə/", "/sæd/"]
+  },
+  {
+    "symbol": "k",
+    "sound": "k",
+    "examples": ["cat", "back", "school"],
+    "ipa_examples": ["/kæt/", "/bæk/", "/skuːl/"]
+  },
+  {
+    "symbol": "ɡ",
+    "sound": "g",
+    "examples": ["go", "egg", "ghost"],
+    "ipa_examples": ["/ɡəʊ/", "/eɡ/", "/ɡəʊst/"]
+  },
+  {
+    "symbol": "f",
+    "sound": "f",
+    "examples": ["fan", "coffee", "laugh"],
+    "ipa_examples": ["/fæn/", "/ˈkɒfi/", "/lɑːf/"]
+  },
+  {
+    "symbol": "v",
+    "sound": "v",
+    "examples": ["van", "heavy", "love"],
+    "ipa_examples": ["/væn/", "/ˈhevi/", "/lʌv/"]
   },
   {
     "symbol": "θ",
     "sound": "voiceless th",
-    "description": "like 'th' in 'think'",
     "examples": ["think", "thin", "bath"],
     "ipa_examples": ["/θɪŋk/", "/θɪn/", "/bɑːθ/"]
   },
   {
     "symbol": "ð",
     "sound": "voiced th",
-    "description": "like 'th' in 'this'",
     "examples": ["this", "that", "mother"],
     "ipa_examples": ["/ðɪs/", "/ðæt/", "/ˈmʌðə/"]
   },
   {
+    "symbol": "s",
+    "sound": "s",
+    "examples": ["sit", "city", "pass"],
+    "ipa_examples": ["/sɪt/", "/ˈsɪti/", "/pɑːs/"]
+  },
+  {
+    "symbol": "z",
+    "sound": "z",
+    "examples": ["zoo", "lazy", "buzz"],
+    "ipa_examples": ["/zuː/", "/ˈleɪzi/", "/bʌz/"]
+  },
+  {
     "symbol": "ʃ",
     "sound": "sh",
-    "description": "like 'sh' in 'ship'",
     "examples": ["ship", "she", "cash"],
     "ipa_examples": ["/ʃɪp/", "/ʃiː/", "/kæʃ/"]
   },
   {
     "symbol": "ʒ",
     "sound": "zh",
-    "description": "like 's' in 'measure'",
     "examples": ["measure", "vision", "genre"],
     "ipa_examples": ["/ˈmeʒə/", "/ˈvɪʒən/", "/ˈʒɒnrə/"]
   },
   {
+    "symbol": "h",
+    "sound": "h",
+    "examples": ["hat", "ahead", "who"],
+    "ipa_examples": ["/hæt/", "/əˈhɛd/", "/huː/"]
+  },
+  {
+    "symbol": "m",
+    "sound": "m",
+    "examples": ["man", "hammer", "sum"],
+    "ipa_examples": ["/mæn/", "/ˈhæmə/", "/sʌm/"]
+  },
+  {
+    "symbol": "n",
+    "sound": "n",
+    "examples": ["nose", "funny", "sun"],
+    "ipa_examples": ["/nəʊz/", "/ˈfʌni/", "/sʌn/"]
+  },
+  {
     "symbol": "ŋ",
     "sound": "ng",
-    "description": "like 'ng' in 'sing'",
     "examples": ["sing", "long", "king"],
     "ipa_examples": ["/sɪŋ/", "/lɒŋ/", "/kɪŋ/"]
+  },
+  {
+    "symbol": "l",
+    "sound": "l",
+    "examples": ["light", "bell", "feel"],
+    "ipa_examples": ["/laɪt/", "/bɛl/", "/fiːl/"]
+  },
+  {
+    "symbol": "r",
+    "sound": "r",
+    "examples": ["red", "right", "sorry"],
+    "ipa_examples": ["/rɛd/", "/raɪt/", "/ˈsɒri/"]
+  },
+  {
+    "symbol": "j",
+    "sound": "y",
+    "examples": ["yes", "yellow", "use"],
+    "ipa_examples": ["/jɛs/", "/ˈjɛləʊ/", "/juːs/"]
+  },
+  {
+    "symbol": "w",
+    "sound": "w",
+    "examples": ["we", "win", "queen"],
+    "ipa_examples": ["/wiː/", "/wɪn/", "/kwiːn/"]
+  },
+  {
+    "symbol": "tʃ",
+    "sound": "ch",
+    "examples": ["chip", "cheese", "chair"],
+    "ipa_examples": ["/tʃɪp/", "/tʃiːz/", "/tʃeə/"]
+  },
+  {
+    "symbol": "dʒ",
+    "sound": "j",
+    "examples": ["judge", "jam", "giant"],
+    "ipa_examples": ["/dʒʌdʒ/", "/dʒæm/", "/ˈdʒaɪənt/"]
+  },
+  {
+    "symbol": "ʔ",
+    "sound": "glottal stop",
+    "examples": ["uh-oh", "button", "water"],
+    "ipa_examples": ["/ˈʌʔəʊ/", "/ˈbʌʔn/", "/ˈwɔːʔə/"]
+  },
+  {
+    "symbol": "ɾ",
+    "sound": "flapped t/d",
+    "examples": ["butter", "city", "water"],
+    "ipa_examples": ["/ˈbʌɾə/", "/ˈsɪɾi/", "/ˈwɔːɾə/"]
   }
 ]
