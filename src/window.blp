@@ -56,15 +56,17 @@ template $Word2ipaWindow : Adw.ApplicationWindow {
             styles ["boxed-list"]
           }
           Label ipa_text {
+            visible: false;
             margin-top: 15;
             margin-bottom: 70;
-            label: _("IPA translation will appear here.");
+            selectable: true;
+            label: _("");
             styles ["title-1"]
           }
           Adw.PreferencesPage {
                 Adw.PreferencesGroup history {
-                      title: _("history");
-
+                  visible: bind ipa_text.visible;
+                  title: _("history");
                 }
           }
         };

@@ -58,7 +58,9 @@ class Word2ipaWindow(Adw.ApplicationWindow):
         json_str = resource_data.get_data().decode("utf-8")
         data = json.loads(json_str)
         if ipa := data["entries"][0][current]:
+            self.ipa_text.show()
             self.ipa_text.set_text(ipa)
+
 
             history_row = Adw.ActionRow()
             lang = Gtk.Label(label=self.selected_lang)
