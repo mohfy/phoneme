@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/com/mohfy/word2ipa">
+  <gresource prefix="/io/github/mohfy/word2ipa">
+    <file preprocess="xml-stripblanks">window.ui</file>
+    <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
     <file>dicts/ar.json</file>
     <file>dicts/de.json</file>
     <file>dicts/en_UK.json</file>
