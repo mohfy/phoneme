@@ -3,4 +3,6 @@
 data/io.github.mohfy.word2ipa.desktop.in
 data/io.github.mohfy.word2ipa.metainfo.xml.in
 data/io.github.mohfy.word2ipa.gschema.xml
-src/window.ui
+src/main.py
+src/window.py
+src/window.blp

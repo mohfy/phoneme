@@ -1,0 +1,90 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $Word2ipaWindow : Adw.ApplicationWindow {
+  title: _("Word2Ipa");
+  width-request: 800;
+  height-request: 600;
+
+  Adw.Breakpoint {
+    condition ("max-width: 550sp")
+
+    setters {
+      header_bar.title-widget: null;
+      switcher_bar.reveal: true;
+    }
+  }
+
+  content: Box {
+    orientation: vertical;
+
+    Adw.HeaderBar header_bar {
+      title-widget: Adw.ViewSwitcher switcher_title {
+        stack: stack;
+        policy: wide;
+      };
+    }
+
+    Adw.ViewStack stack {
+      vexpand: true;
+
+      Adw.ViewStackPage page1 {
+        name: "Word to IPA";
+        title: _("Word2Ipa");
+        icon-name: "object-flip-horizontal-symbolic";
+        use-underline: true;
+
+        child: Box {
+          orientation: vertical;
+          valign: center;
+          margin-top: 100;
+          margin-start: 25;
+          margin-end: 25;
+
+          Entry word_text {
+            placeholder-text: _("Enter a word...");
+            activate => $on_entry_activate();
+          }
+          Label ipa_text {
+            margin-top: 15;
+            margin-bottom: 70;
+            label: _("IPA translation will appear here.");
+            styles ["title-1"]
+          }
+          Adw.PreferencesPage {
+                Adw.PreferencesGroup history {
+                      title: _("history");
+
+                }
+          }
+        };
+      }
+
+
+      Adw.ViewStackPage page2 {
+        name: "page2";
+        title: _("IPA Dictionary");
+        icon-name: "accessories-dictionary-symbolic";
+        use-underline: true;
+
+        child: Adw.StatusPage {
+          title: bind page2.title;
+          icon-name: bind page2.icon-name;
+
+          child: Box {
+            orientation: vertical;
+            valign: center;
+
+           Label {
+             label: _("in progress...");
+           }
+          };
+        };
+      }
+    }
+
+    Adw.ViewSwitcherBar switcher_bar {
+      stack: stack;
+    }
+  };
+}

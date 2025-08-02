@@ -1,5 +1,3 @@
-pkgdatadir = get_option('prefix') / get_option('datadir') / meson.project_name()
-
 desktop_file = i18n.merge_file(
         input: 'io.github.mohfy.word2ipa.desktop.in',
        output: 'io.github.mohfy.word2ipa.desktop',
@@ -13,13 +11,6 @@ desktop_utils = find_program('desktop-file-validate', required: false)
 if desktop_utils.found()
   test('Validate desktop file', desktop_utils, args: [desktop_file])
 endif
-
-gnome.compile_resources('word2ipa',
-  'word2ipa.gresource.xml.in',
-  gresource_bundle: true,
-  install: true,
-  install_dir: pkgdatadir,
-)
 
 appstream_file = i18n.merge_file(
         input: 'io.github.mohfy.word2ipa.metainfo.xml.in',

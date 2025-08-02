@@ -3,23 +3,14 @@
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "48",
     "sdk" : "org.gnome.Sdk",
-    "sdk-extensions" : [
-        "org.freedesktop.Sdk.Extension.rust-stable"
-    ],
     "command" : "word2ipa",
     "finish-args" : [
+        "--share=network",
         "--share=ipc",
         "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland"
     ],
-    "build-options" : {
-        "append-path" : "/usr/lib/sdk/rust-stable/bin",
-        "env" : {
-            "RUST_BACKTRACE" : "1",
-            "RUST_LOG" : "word2ipa=debug"
-        }
-    },
     "cleanup" : [
         "/include",
         "/lib/pkgconfig",
@@ -38,8 +29,8 @@
             "buildsystem" : "meson",
             "sources" : [
                 {
-		  "type": "dir",
-		  "path": "../."
+                    "type" : "git",
+                    "url" : "file:///home/mohfy/Projects"
                 }
             ]
         }
