@@ -40,10 +40,20 @@ template $Word2ipaWindow : Adw.ApplicationWindow {
           margin-top: 100;
           margin-start: 25;
           margin-end: 25;
-
-          Entry word_text {
-            placeholder-text: _("Enter a word...");
-            activate => $on_entry_activate();
+          ListBox {
+            Entry word_text {
+              placeholder-text: _("Enter a word...");
+              activate => $on_entryrow_activate();
+            }
+            Adw.ComboRow language_changer {
+              title: _("Choose word's language");
+              enable-search: true;
+              model: StringList {
+                strings ["en_US 🇺🇸","ar 🇸🇦", "de 🇩🇪", "en_UK 🇬🇧", "eo 🏳️‍🟩⭐", "es_ES 🇪🇸", "es_MX 🇲🇽", "fa 🇮🇷", "fi 🇫🇮", "fr_FR 🇫🇷", "fr_QC 🇶🇦", "ja 🇯🇵", "jam 🇯🇲", "ma 🇮🇳", "nb 🇳🇴", "or 🇮🇳", "sv 🇸🇪", "sw 🇰🇪", "vi_C 🇻🇳", "vi_N 🇻🇳", "vi_S 🇻🇳", "yue 🇭🇰", "zh_hans 🇭🇰", "zh_hant 🇹🇼"]
+              };
+              notify::selected => $on_language_change();
+            }
+            styles ["boxed-list"]
           }
           Label ipa_text {
             margin-top: 15;
@@ -67,20 +77,16 @@ template $Word2ipaWindow : Adw.ApplicationWindow {
         icon-name: "accessories-dictionary-symbolic";
         use-underline: true;
 
-        child: Adw.StatusPage {
-          title: bind page2.title;
-          icon-name: bind page2.icon-name;
-
-          child: Box {
-            orientation: vertical;
-            valign: center;
-
-           Label {
-             label: _("in progress...");
-           }
-          };
+        child: ScrolledWindow {
+          valign: center;
+          min-content-height: 600;
+          Adw.PreferencesPage {
+                Adw.PreferencesGroup ipa_dict_list {
+                      title: _("IPA Dictionary");
+                    }
+              }
         };
-      }
+        }
     }
 
     Adw.ViewSwitcherBar switcher_bar {
