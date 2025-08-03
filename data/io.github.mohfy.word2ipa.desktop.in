@@ -1,10 +1,11 @@
 [Desktop Entry]
-Name=word2ipa
+Name=Word2IPA
+Comment=Convert words to IPA
 Exec=word2ipa
 Icon=io.github.mohfy.word2ipa
 Terminal=false
 Type=Application
 Categories=Utility;
-Keywords=GTK;
+Keywords=IPA;dictionary;linguistics;
 StartupNotify=true
-DBusActivatable=true
+DBusActivatable=false

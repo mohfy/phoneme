@@ -15,23 +15,23 @@
   </developer>
 
   <!-- Required: Should be a link to the upstream homepage for the component -->
-  <url type="homepage">https://example.org/</url>
+  <url type="homepage">https://github.com/mohfy/word2ipa/</url>
   <!-- Recommended: It is highly recommended for open-source projects to display the source code repository -->
-  <url type="vcs-browser">https://example.org/repository</url>
+  <url type="vcs-browser">https://github.com/mohfy/word2ipa/repository</url>
   <!-- Should point to the software's bug tracking system, for users to report new bugs -->
-  <url type="bugtracker">https://example.org/issues</url>
+  <url type="bugtracker">https://github.com/mohfy/word2ipa/issues</url>
   <!-- Should link a FAQ page for this software, to answer some of the most-asked questions in detail -->
   <!-- URLs of this type should point to a webpage where users can submit or modify translations of the upstream project -->
-  <url type="translate">https://example.org/translate</url>
-  <url type="faq">https://example.org/faq</url>
+  <url type="translate">https://github.com/mohfy/word2ipa/translate</url>
+  <url type="faq">https://github.com/mohfy/word2ipa/faq</url>
   <!-- Should provide a web link to an online user's reference, a software manual or help page -->
-  <url type="help">https://example.org/help</url>
+  <url type="help">https://github.com/mohfy/word2ipa/help</url>
   <!-- URLs of this type should point to a webpage showing information on how to donate to the described software project -->
-  <url type="donation">https://example.org/donate</url>
+  <url type="donation">https://github.com/mohfy/word2ipa/donate</url>
   <!-- This could for example be an HTTPS URL to an online form or a page describing how to contact the developer -->
-  <url type="contact">https://example.org/contact</url>
+  <url type="contact">https://github.com/mohfy/word2ipa/contact</url>
   <!-- URLs of this type should point to a webpage showing information on how to contribute to the described software project -->
-  <url type="contribute">https://example.org/contribute</url>
+  <url type="contribute">https://github.com/mohfy/word2ipa/contribute</url>
 
   <translation type="gettext">word2ipa</translation>
   <!-- All graphical applications having a desktop file must have this tag in the MetaInfo.
@@ -48,23 +48,24 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://example.org/example1.png</image>
-      <caption>A caption</caption>
+      <image>https://raw.githubusercontent.com/mohfy/word2ipa/a7677548de865b28855235b40b5abba7e1959185/screenshots/transcriber.png</image>
+      <caption>Home Page</caption>
     </screenshot>
     <screenshot>
-      <image>https://example.org/example2.png</image>
-      <caption>A caption</caption>
+      <image>https://raw.githubusercontent.com/mohfy/word2ipa/a7677548de865b28855235b40b5abba7e1959185/screenshots/alphabit-dict.png</image>
+      <caption>IPA Dictionary</caption>
     </screenshot>
   </screenshots>
 
   <releases>
-    <release version="1.0.1" date="2024-01-18">
-      <url type="details">https://example.org/changelog.html#version_1.0.1</url>
+    <release version="1.0.0" date="2024-01-18">
+      <url type="details">https://github.com/mohfy/word2ipa/releases/tag/v1.0.0</url>
       <description translate="no">
-        <p>Release description</p>
+        <p>new update!</p>
         <ul>
-          <li>List of changes</li>
-          <li>List of changes</li>
+          <li>rewrite to python && blueprint</li>
+          <li>made changing language feature way easier to use</li>
+          <li>IPA dictionary has way better UI and UX than before</li>
         </ul>
       </description>
     </release>
