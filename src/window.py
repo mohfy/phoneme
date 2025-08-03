@@ -34,6 +34,7 @@ class Word2ipaWindow(Adw.ApplicationWindow):
         super().__init__(**kwargs)
         self.init_template()
 
+
         # for searching in lang selector
         expr = Gtk.ClosureExpression.new(
         GObject.TYPE_STRING,
@@ -58,8 +59,14 @@ class Word2ipaWindow(Adw.ApplicationWindow):
             self.ipa_dict_list.add(ipa_info_row)
 
     @Gtk.Template.Callback()
-    def on_entryrow_activate(self, word_text):
-        resource_data = Gio.resources_lookup_data(f"/io/github/mohfy/word2ipa/dicts/{self.selected_lang.partition(" ")[0]}.json", Gio.ResourceLookupFlags.NONE)
+    def on_entryrow_apply(self, word_text):
+        lang = self.selected_lang
+        if "(" in lang and ")" in lang:
+            code = lang[lang.find("(")+1 : lang.find(")")]
+        else:
+            code = lang.split()[-1]
+
+        resource_data = Gio.resources_lookup_data(f"/io/github/mohfy/word2ipa/dicts/{code}.json", Gio.ResourceLookupFlags.NONE)
         current = word_text.get_text()
         json_str = resource_data.get_data().decode("utf-8")
         data = json.loads(json_str)

@@ -46,6 +46,19 @@
   </screenshots>
 
   <releases>
+    <release version="1.1.0" date="2025-08-3">
+      <url type="details">https://github.com/mohfy/word2ipa/releases/tag/v1.1.0</url>
+      <description translate="no">
+        <p>Better UI update</p>
+        <ul>
+          <li>updated UI for most of the app</li>
+          <li>searching for languages is way easier now</li>
+          <li>Added about menu</li>
+          <li>fixed some bugs</li>
+        </ul>
+      </description>
+    </release>
+
     <release version="1.0.0" date="2024-01-18">
       <url type="details">https://github.com/mohfy/word2ipa/releases/tag/v1.0.0</url>
       <description translate="no">

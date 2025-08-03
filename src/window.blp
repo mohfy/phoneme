@@ -15,17 +15,24 @@ template $Word2ipaWindow : Adw.ApplicationWindow {
     }
   }
 
-  content: Box {
-    orientation: vertical;
-
+  Adw.ToolbarView {
+    [top]
     Adw.HeaderBar header_bar {
       title-widget: Adw.ViewSwitcher switcher_title {
         stack: stack;
         policy: wide;
       };
+
+      [end]
+      MenuButton {
+        primary: true;
+        icon-name: "open-menu-symbolic";
+        tooltip-text: _("Main Menu");
+        menu-model: primary_menu;
+      }
     }
 
-    Adw.ViewStack stack {
+    content: Adw.ViewStack stack {
       vexpand: true;
 
       Adw.ViewStackPage page1 {
@@ -40,47 +47,50 @@ template $Word2ipaWindow : Adw.ApplicationWindow {
           margin-top: 100;
           margin-start: 25;
           margin-end: 25;
+
           ListBox {
-            Entry word_text {
-              placeholder-text: _("Enter a word...");
-              activate => $on_entryrow_activate();
+            Adw.EntryRow word_text {
+            title: _("Enter a word...");
+            show-apply-button: true;
+            apply => $on_entryrow_apply();
             }
             Adw.ComboRow language_changer {
               title: _("Choose word's language");
               enable-search: true;
               model: StringList {
                 strings [
-  "en_US (American English)",
-  "ar (Arabic)",
-  "de (German)",
-  "en_UK (British English)",
-  "eo (Esperanto)",
-  "es_ES (Spanish - Spain)",
-  "es_MX (Spanish - Mexico)",
-  "fa (Persian)",
-  "fi (Finnish)",
-  "fr_FR (French - France)",
-  "fr_QC (French - Quebec)",
-  "ja (Japanese)",
-  "jam (Jamaican Patois)",
-  "ma (Marathi)",
-  "nb (Norwegian Bokmål)",
-  "or (Odia)",
-  "sv (Swedish)",
-  "sw (Swahili)",
-  "vi_C (Vietnamese - Central)",
-  "vi_N (Vietnamese - Northern)",
-  "vi_S (Vietnamese - Southern)",
-  "yue (Cantonese)",
-  "zh_hans (Chinese - Simplified)",
-  "zh_hant (Chinese - Traditional)"
-]
+                "American English (en_US)",
+                "Arabic (ar)",
+                "German (de)",
+                "British English (en_UK)",
+                "Esperanto (eo)",
+                "Spanish - Spain (es_ES)",
+                "Spanish - Mexico (es_MX)",
+                "Persian (fa)",
+                "Finnish (fi)",
+                "French - France (fr_FR)",
+                "French - Quebec (fr_QC)",
+                "Japanese (ja)",
+                "Jamaican Patois (jam)",
+                "Marathi (ma)",
+                "Norwegian Bokmål (nb)",
+                "Odia (or)",
+                "Swedish (sv)",
+                "Swahili (sw)",
+                "Vietnamese - Central (vi_C)",
+                "Vietnamese - Northern (vi_N)",
+                "Vietnamese - Southern (vi_S)",
+                "Cantonese (yue)",
+                "Chinese - Simplified (zh_hans)",
+                "Chinese - Traditional (zh_hant)"
+              ]
 
               };
               notify::selected => $on_language_change();
             }
             styles ["boxed-list"]
           }
+
           Label ipa_text {
             visible: false;
             margin-top: 15;
@@ -89,36 +99,55 @@ template $Word2ipaWindow : Adw.ApplicationWindow {
             label: _("");
             styles ["title-1"]
           }
+
           Adw.PreferencesPage {
-                Adw.PreferencesGroup history {
-                  visible: bind ipa_text.visible;
-                  title: _("history");
-                }
+            Adw.PreferencesGroup history {
+              visible: bind ipa_text.visible;
+              title: _("history");
+            }
           }
         };
       }
 
-
       Adw.ViewStackPage page2 {
         name: "page2";
-        title: _("IPA Dictionary");
-        icon-name: "accessories-dictionary-symbolic";
+        title: _("IPA Lookup");
+        icon-name: "system-search-symbolic";
         use-underline: true;
 
         child: ScrolledWindow {
           valign: center;
           min-content-height: 600;
-          Adw.PreferencesPage {
-                Adw.PreferencesGroup ipa_dict_list {
-                      title: _("IPA Dictionary");
-                    }
-              }
-        };
-        }
-    }
 
+          Adw.PreferencesPage {
+            Adw.PreferencesGroup ipa_dict_list {
+              title: _("IPA Lookup Table");
+            }
+          }
+        };
+      }
+    };
+
+    [bottom]
     Adw.ViewSwitcherBar switcher_bar {
       stack: stack;
     }
-  };
+  }
+}
+
+menu primary_menu {
+  section {
+    item {
+      label: _("_Preferences");
+      action: "app.preferences";
+    }
+    item {
+      label: _("_Keyboard Shortcuts");
+      action: "win.show-help-overlay";
+    }
+    item {
+      label: _("_About Word2ipa");
+      action: "app.about";
+    }
+  }
 }
