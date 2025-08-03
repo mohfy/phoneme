@@ -51,7 +51,7 @@
       <description translate="no">
         <p>new update!</p>
         <ul>
-          <li>rewrite to python && blueprint</li>
+          <li>rewrite to python and blueprint</li>
           <li>made changing language feature way easier to use</li>
           <li>IPA dictionary has way better UI and UX than before</li>
         </ul>
