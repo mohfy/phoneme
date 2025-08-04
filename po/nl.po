@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the word2ipa package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#: src/window.blp:99
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: word2ipa\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-03 20:12+0200\n"
+"PO-Revision-Date: 2025-08-03 21:28+0200\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+
+#: data/io.github.mohfy.word2ipa.desktop.in:2
+msgid "Word2IPA"
+msgstr "Word2IPA"
+
+#: data/io.github.mohfy.word2ipa.desktop.in:3
+msgid "Convert words to IPA"
+msgstr "Zet woorden om naar IPA"
+
+#: data/io.github.mohfy.word2ipa.desktop.in:9
+msgid "IPA;dictionary;linguistics;"
+msgstr "IPA;fonetisch;woordenboek;taal;taalkunde;"
+
+#: data/io.github.mohfy.word2ipa.metainfo.xml.in:7
+msgid "Word2ipa"
+msgstr "Word2ipa"
+
+#: data/io.github.mohfy.word2ipa.metainfo.xml.in:8
+msgid "Turn words into their true sounds"
+msgstr "Bekijk hoe woorden dienen te worden uitgesproken"
+
+#: data/io.github.mohfy.word2ipa.metainfo.xml.in:10
+msgid ""
+"Word2IPA lets you look up individual words or paste entire phrases and see "
+"how they are pronounced in the IPA format. It's a perfect tool for language "
+"learners, linguists, or speech technology developers."
+msgstr ""
+"Met Word2IPA kunt u woorden of zinnen opzoeken en zien hoe ze dienen te "
+"worden uitgesproken volgens het Internationaal Fonetisch Alfabet (IPA). "
+"Handig voor zij die een nieuwe taal willen leren, taalkundigen en "
+"ontwikkelaars van spraaktechnologie."
+
+#: data/io.github.mohfy.word2ipa.metainfo.xml.in:14
+msgid "mohfy"
+msgstr "mohfy"
+
+#: data/io.github.mohfy.word2ipa.metainfo.xml.in:40
+msgid "Home Page"
+msgstr "Website"
+
+#: data/io.github.mohfy.word2ipa.metainfo.xml.in:44
+msgid "IPA Dictionary"
+msgstr "IPA-woordenboek"
+
+#. Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
+#: src/main.py:64
+msgid "translator-credits"
+msgstr "Heimen Stoffels <vistausss@fastmail.com>"
+
+#: src/window.blp:5 src/window.blp:40
+msgid "Word2Ipa"
+msgstr "Word2Ipa"
+
+#: src/window.blp:30
+msgid "Main Menu"
+msgstr "Hoofdmenu"
+
+#: src/window.blp:53
+msgid "Enter a word..."
+msgstr "Vul een woord in…"
+
+#: src/window.blp:58
+msgid "Choose word's language"
+msgstr "Kies de woordtaal"
+
+#: src/window.blp:106
+msgid "history"
+msgstr "Geschiedenis"
+
+#: src/window.blp:114
+msgid "IPA Lookup"
+msgstr "IPA opzoeken"
+
+#: src/window.blp:124
+msgid "IPA Lookup Table"
+msgstr "IPA-opzoektabel"
+
+#: src/window.blp:141
+msgid "_Preferences"
+msgstr "_Voorkeuren"
+
+#: src/window.blp:145
+msgid "_Keyboard Shortcuts"
+msgstr "_Sneltoetsen"
+
+#: src/window.blp:149
+msgid "_About Word2ipa"
+msgstr "Over Word2ip_a"
