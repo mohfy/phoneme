@@ -30,8 +30,8 @@
 
   <!-- Applications should set a brand color in both light and dark variants like so -->
   <branding>
-    <color type="primary" scheme_preference="light">#ff00ff</color>
-    <color type="primary" scheme_preference="dark">#993d3d</color>
+    <color type="primary" scheme_preference="light">#F7F9FA</color>
+    <color type="primary" scheme_preference="dark">#0A2540</color>
   </branding>
 
   <screenshots>
@@ -46,6 +46,15 @@
   </screenshots>
 
   <releases>
+    <release version="1.1.1" date="2025-08-3">
+      <url type="details">https://github.com/mohfy/word2ipa/releases/tag/v1.1.1</url>
+      <description translate="no">
+        <p>Bugs</p>
+        <ul>
+          <li>fixed some bugs</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.1.0" date="2025-08-3">
       <url type="details">https://github.com/mohfy/word2ipa/releases/tag/v1.1.0</url>
       <description translate="no">
