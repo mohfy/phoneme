@@ -59,6 +59,7 @@ class Word2ipaApplication(Adw.Application):
                                 version='1.1.0',
                                 developers=['mohfy'],
                                 copyright='© 2025 mohfy',
+                                license_type=Gtk.License.GPL_3_0,
                                 website='https://github.com/mohfy/word2ipa')
         # Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
         about.set_translator_credits(_('translator-credits'))
