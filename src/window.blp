@@ -92,19 +92,26 @@ template $Word2ipaWindow : Adw.ApplicationWindow {
           }
 
           Label ipa_text {
-            visible: false;
             margin-top: 15;
-            margin-bottom: 70;
+            margin-bottom: 40;
             selectable: true;
-            label: _("");
+            label: _("IPA translation will appear here.");
             styles ["title-1"]
           }
-
-          Adw.PreferencesPage {
-            Adw.PreferencesGroup history {
-              visible: bind ipa_text.visible;
-              title: _("history");
+          ScrolledWindow {
+            vexpand: true;
+            min-content-height: 250;
+            Adw.PreferencesPage {
+              Adw.PreferencesGroup history_ui {
+                title: _("history");
+              }
             }
+          }
+          Button clr_history {
+            margin-bottom: 12;
+            label: _("Clear History");
+            clicked => $on_button_clicked();
+            styles ["destructive-action"]
           }
         };
       }

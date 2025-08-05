@@ -46,6 +46,18 @@
   </screenshots>
 
   <releases>
+    <release version="1.2.0" date="2025-08-3">
+      <url type="details">https://github.com/mohfy/word2ipa/releases/tag/v1.2.0</url>
+      <description translate="no">
+        <p>Made some history</p>
+        <ul>
+          <li>History will now be saved, easier to find what you transcribed</li>
+          <li>Added Dutch translation (Thanks @Vistaus)</li>
+          <li>added some links to about dialog</li>
+          <li>Fixed some bugs!</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.1.1" date="2025-08-3">
       <url type="details">https://github.com/mohfy/word2ipa/releases/tag/v1.1.1</url>
       <description translate="no">

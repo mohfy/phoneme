@@ -17,8 +17,9 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from gi.repository import Adw, Gtk, Gio, GObject
+from gi.repository import Adw, Gtk, Gio, GObject, GLib
 import json
+import os
 
 @Gtk.Template(resource_path='/io/github/mohfy/word2ipa/window.ui')
 class Word2ipaWindow(Adw.ApplicationWindow):
@@ -28,11 +29,36 @@ class Word2ipaWindow(Adw.ApplicationWindow):
     word_text = Gtk.Template.Child()
     ipa_text = Gtk.Template.Child()
     language_changer = Gtk.Template.Child()
-    history = Gtk.Template.Child()
+    history_ui = Gtk.Template.Child()
+    clr_history = Gtk.Template.Child()
+    history = []
+    config_file_path = []
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.init_template()
+
+        # load history from files
+        app_config_dir = os.path.join(GLib.get_user_config_dir(), "word2ipa")
+        self.config_file_path = os.path.join(app_config_dir, "history.json")
+
+        os.makedirs(app_config_dir, exist_ok=True)
+
+        if os.path.exists(self.config_file_path):
+            with open(self.config_file_path, "r") as f:
+                self.history = json.load(f)
+        else:
+            self.history = []
+
+        # import history from json
+        for history in self.history:
+            history_row = Adw.ActionRow()
+            history_row.set_title(history["ipa"])
+            history_row.set_subtitle(history["word"])
+
+            lang = Gtk.Label(label=history["lang"])
+            history_row.add_suffix(lang)
+            self.history_ui.add(history_row)
 
 
         # for searching in lang selector
@@ -61,6 +87,8 @@ class Word2ipaWindow(Adw.ApplicationWindow):
     @Gtk.Template.Callback()
     def on_entryrow_apply(self, word_text):
         lang = self.selected_lang
+        history = self.history
+
         if "(" in lang and ")" in lang:
             code = lang[lang.find("(")+1 : lang.find(")")]
         else:
@@ -74,19 +102,36 @@ class Word2ipaWindow(Adw.ApplicationWindow):
             self.ipa_text.show()
             self.ipa_text.set_text(ipa)
 
+            # add history
+            self.history.append({"word": current, "ipa": ipa, "lang": self.selected_lang})
+            with open(self.config_file_path, "w") as f:
+                json.dump(history, f, indent=2)
 
             history_row = Adw.ActionRow()
-            lang = Gtk.Label(label=self.selected_lang)
-            history_row.set_title(ipa)
-            history_row.set_subtitle(current)
+            history_row.set_title(history[len(history) - 1]["ipa"])
+            history_row.set_subtitle(history[len(history) - 1]["word"])
 
+            lang = Gtk.Label(label=history[len(history) - 1]["lang"])
             history_row.add_suffix(lang)
-            self.history.add(history_row)
-
-        else:
-            self.ipa_text.set_text("IPA translation will appear here.")
+            self.history_ui.add(history_row)
 
     @Gtk.Template.Callback()
     def on_language_change(self, language_changer, pspec):
         self.selected_lang = language_changer.get_selected_item().get_string()
         print(f"lang changed: {self.selected_lang}")
+
+    @Gtk.Template.Callback()
+    def on_button_clicked(self, clr_history):
+
+        self.history.clear()
+
+        empty_group = Adw.PreferencesGroup(title="History")
+        parent = self.history_ui.get_parent()
+        parent.remove(self.history_ui)
+        parent.append(empty_group)
+        self.history_ui = empty_group
+
+        with open(self.config_file_path, "w") as f:
+            json.dump([], f, indent=2)
+
+        print("History cleared.")
