@@ -38,8 +38,6 @@ class Word2ipaApplication(Adw.Application):
         self.create_action('about', self.on_about_action)
         self.create_action('preferences', self.on_preferences_action)
 
-
-
     def do_activate(self):
         """Called when the application is activated.
 
@@ -60,6 +58,7 @@ class Word2ipaApplication(Adw.Application):
                                 developers=['mohfy'],
                                 copyright='© 2025 mohfy',
                                 license_type=Gtk.License.GPL_3_0,
+                                issue_url='https://github.com/mohfy/word2ipa/issues',
                                 website='https://github.com/mohfy/word2ipa')
         # Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
         about.set_translator_credits(_('translator-credits'))
@@ -83,6 +82,8 @@ class Word2ipaApplication(Adw.Application):
         self.add_action(action)
         if shortcuts:
             self.set_accels_for_action(f"app.{name}", shortcuts)
+
+
 def main(version):
     """The application's entry point."""
     app = Word2ipaApplication()
