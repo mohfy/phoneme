@@ -51,12 +51,20 @@ class Word2ipaApplication(Adw.Application):
 
     def on_about_action(self, *args):
         """Callback for the app.about action."""
+        debug_info = (
+            f"GTK {Gtk.MAJOR_VERSION}.{Gtk.MINOR_VERSION}.{Gtk.MICRO_VERSION}\n"
+        )
+        debug_info += "PyGObject {}.{}.{}\n".format(*gi.version_info)
+        debug_info += (
+            f"libadwaita {Adw.MAJOR_VERSION}.{Adw.MINOR_VERSION}.{Adw.MICRO_VERSION}\n"
+        )
         about = Adw.AboutDialog(application_name='word2ipa',
                                 application_icon='io.github.mohfy.word2ipa',
                                 developer_name='mohfy',
                                 version='1.1.0',
                                 developers=['mohfy'],
                                 copyright='© 2025 mohfy',
+                                debug_info=debug_info,
                                 license_type=Gtk.License.GPL_3_0,
                                 issue_url='https://github.com/mohfy/word2ipa/issues',
                                 website='https://github.com/mohfy/word2ipa')
