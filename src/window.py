@@ -38,10 +38,9 @@ class Word2ipaWindow(Adw.ApplicationWindow):
         super().__init__(**kwargs)
         self.init_template()
 
-        # load history from files
+        # Load history from file
         app_config_dir = os.path.join(GLib.get_user_config_dir(), "word2ipa")
         self.config_file_path = os.path.join(app_config_dir, "history.json")
-
         os.makedirs(app_config_dir, exist_ok=True)
 
         if os.path.exists(self.config_file_path):
@@ -50,27 +49,23 @@ class Word2ipaWindow(Adw.ApplicationWindow):
         else:
             self.history = []
 
-        # import history from json
-        for history in self.history:
-            history_row = Adw.ActionRow()
-            history_row.set_title(history["ipa"])
-            history_row.set_subtitle(history["word"])
+        # Populate history list
+        for history_item in self.history:
+            self.add_history_row(history_item)
 
-            lang = Gtk.Label(label=history["lang"])
-            history_row.add_suffix(lang)
-            self.history_ui.add(history_row)
-
-
-        # for searching in lang selector
+        # Set up language search
         expr = Gtk.ClosureExpression.new(
-        GObject.TYPE_STRING,
-        lambda obj, *args: obj.get_string() if obj else "",
-        None
+            GObject.TYPE_STRING,
+            lambda obj, *args: obj.get_string() if obj else "",
+            None
         )
         self.language_changer.set_expression(expr)
 
-        # init IPA Dictionary
-        ipa_dict_json = Gio.resources_lookup_data(f"/io/github/mohfy/word2ipa/dicts/ipa_lookup_table.json", Gio.ResourceLookupFlags.NONE).get_data().decode("utf-8")
+        # Init IPA Dictionary
+        ipa_dict_json = Gio.resources_lookup_data(
+            "/io/github/mohfy/word2ipa/dicts/ipa_lookup_table.json",
+            Gio.ResourceLookupFlags.NONE
+        ).get_data().decode("utf-8")
         ipa_data = json.loads(ipa_dict_json)
         for ipa_info in ipa_data:
             ipa_info_row = Adw.ExpanderRow()
@@ -84,6 +79,56 @@ class Word2ipaWindow(Adw.ApplicationWindow):
 
             self.ipa_dict_list.add(ipa_info_row)
 
+    def add_history_row(self, history_item):
+        """Add a single history entry row with remove button."""
+        row = Adw.ActionRow()
+        row.set_title(history_item["ipa"])
+        row.set_subtitle(history_item["word"])
+
+        lang_label = Gtk.Label(label=history_item["lang"])
+        lang_label.add_css_class("dim-label")
+        row.add_suffix(lang_label)
+
+        # Trash button
+        remove_btn = Gtk.Button(icon_name="user-trash-symbolic")
+        remove_btn.add_css_class("flat")
+        remove_btn.set_tooltip_text("Remove from history")
+        remove_btn.connect("clicked", self.on_remove_history_row, row, history_item)
+        row.add_suffix(remove_btn)
+
+        # Add to the PreferencesGroup (history_ui)
+        # PreferencesGroup supports add()/remove() for its children.
+        self.history_ui.add(row)
+
+    def on_remove_history_row(self, button, row, history_item):
+        """Remove a specific history row."""
+        # Remove from internal list
+        self.history = [
+            h for h in self.history
+            if not (
+                h["word"] == history_item["word"] and
+                h["ipa"] == history_item["ipa"] and
+                h["lang"] == history_item["lang"]
+            )
+        ]
+
+        # Save updated history
+        with open(self.config_file_path, "w") as f:
+            json.dump(self.history, f, indent=2)
+
+        # Remove row from UI instantly
+        try:
+            self.history_ui.remove(row)
+        except Exception:
+            # Fallback: if remove fails, attempt to recreate the group
+            parent = self.history_ui.get_parent()
+            new_group = Adw.PreferencesGroup(title="History")
+            parent.remove(self.history_ui)
+            parent.append(new_group)
+            self.history_ui = new_group
+            for h in self.history:
+                self.add_history_row(h)
+
     @Gtk.Template.Callback()
     def on_entryrow_apply(self, word_text):
         lang = self.selected_lang
@@ -94,26 +139,24 @@ class Word2ipaWindow(Adw.ApplicationWindow):
         else:
             code = lang.split()[-1]
 
-        resource_data = Gio.resources_lookup_data(f"/io/github/mohfy/word2ipa/dicts/{code}.json", Gio.ResourceLookupFlags.NONE)
+        resource_data = Gio.resources_lookup_data(
+            f"/io/github/mohfy/word2ipa/dicts/{code}.json",
+            Gio.ResourceLookupFlags.NONE
+        )
         current = word_text.get_text()
         json_str = resource_data.get_data().decode("utf-8")
         data = json.loads(json_str)
-        if ipa := data["entries"][0][current]:
+        if ipa := data["entries"][0].get(current):
             self.ipa_text.show()
             self.ipa_text.set_text(ipa)
 
-            # add history
-            self.history.append({"word": current, "ipa": ipa, "lang": self.selected_lang})
+            # Add history entry
+            new_entry = {"word": current, "ipa": ipa, "lang": self.selected_lang}
+            self.history.append(new_entry)
             with open(self.config_file_path, "w") as f:
-                json.dump(history, f, indent=2)
+                json.dump(self.history, f, indent=2)
 
-            history_row = Adw.ActionRow()
-            history_row.set_title(history[len(history) - 1]["ipa"])
-            history_row.set_subtitle(history[len(history) - 1]["word"])
-
-            lang = Gtk.Label(label=history[len(history) - 1]["lang"])
-            history_row.add_suffix(lang)
-            self.history_ui.add(history_row)
+            self.add_history_row(new_entry)
 
     @Gtk.Template.Callback()
     def on_language_change(self, language_changer, pspec):
@@ -122,16 +165,22 @@ class Word2ipaWindow(Adw.ApplicationWindow):
 
     @Gtk.Template.Callback()
     def on_button_clicked(self, clr_history):
-
+        """Clear all history entries by replacing the PreferencesGroup with a fresh one."""
         self.history.clear()
 
-        empty_group = Adw.PreferencesGroup(title="History")
+        # Replace the PreferencesGroup with a new (empty) group.
         parent = self.history_ui.get_parent()
+        # create a fresh group with the same title (use a simple "History" title)
+        empty_group = Adw.PreferencesGroup(title="History")
+
+        # replace in the parent container
         parent.remove(self.history_ui)
         parent.append(empty_group)
         self.history_ui = empty_group
 
+        # persist empty history
         with open(self.config_file_path, "w") as f:
             json.dump([], f, indent=2)
 
         print("History cleared.")
+
