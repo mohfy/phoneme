@@ -36,16 +36,26 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/mohfy/word2ipa/2b261dd9b7e242a37d4d0caf0fd292b17ecc1a95/screenshots/transcriber.png</image>
+      <image>https://raw.githubusercontent.com/mohfy/word2ipa/703816e1bbec07e8011615ab55dd2192e1b59878/screenshots/transcriber.png</image>
       <caption>Home Page</caption>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/mohfy/word2ipa/2b261dd9b7e242a37d4d0caf0fd292b17ecc1a95/screenshots/ipa-lookup.png</image>
+      <image>https://raw.githubusercontent.com/mohfy/word2ipa/703816e1bbec07e8011615ab55dd2192e1b59878/screenshots/ipa-lookup.png</image>
       <caption>IPA Lookup</caption>
     </screenshot>
   </screenshots>
 
   <releases>
+    <release version="1.2.5" date="2025-08-8">
+      <url type="details">https://github.com/mohfy/word2ipa/releases/tag/v1.2.5</url>
+      <description translate="no">
+        <p>Are we satisfied yet?</p>
+        <ul>
+          <li>Add debug info to about dialog by @vanillajonathan in #9</li>
+          <li>Added ability to delete specific history rows</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.2.0" date="2025-08-3">
       <url type="details">https://github.com/mohfy/word2ipa/releases/tag/v1.2.0</url>
       <description translate="no">

@@ -61,7 +61,7 @@ class Word2ipaApplication(Adw.Application):
         about = Adw.AboutDialog(application_name='word2ipa',
                                 application_icon='io.github.mohfy.word2ipa',
                                 developer_name='mohfy',
-                                version='1.1.0',
+                                version='1.2.5',
                                 developers=['mohfy'],
                                 copyright='© 2025 mohfy',
                                 debug_info=debug_info,
