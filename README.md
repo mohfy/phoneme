@@ -48,7 +48,9 @@ Word2IPA lets you look up individual words or paste entire phrases and see how t
 3. Once cloned, locate the dropdown menu next to the `io.github.mohfy.word2ipa.json` text at the top of the screen.
 4. Use the dropdown to press **Build** to compile the project. From the same menu, you can also **Run** the project or **Export** it as a Flatpak bundle.
 
-### AppImage
+## Credits
+* **IPA Dictionary Data:** Provided by [ipa-dict](https://github.com/open-dict-data/ipa-dict).
+* **Application Icon:** Designed by @Blisterexe.
 
 
 
