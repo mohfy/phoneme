@@ -14,10 +14,11 @@
   <strong>Phoneme</strong> converts English (and other languages) words into the International Phonetic Alphabet (IPA),
   providing a clear and standardized representation of pronunciation.
 </p>
-
+<p align="center">
 <a href='https://flathub.org/apps/io.github.mohfy.phoneme'>
     <img width='240' alt='Get it on Flathub' src='https://flathub.org/api/badge?locale=en'/>
   </a>
+</p>
 
 ---
 
