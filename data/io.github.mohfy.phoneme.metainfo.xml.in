@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
   <id>io.github.mohfy.phoneme</id>
+  <replaces>
+    <id>io.github.mohfy.word2ipa</id>
+  </replaces>
+  <provides>
+    <id>io.github.mohfy.word2ipa.desktop</id>
+  </provides>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
 
-  <name>Word2IPA</name>
+  <name>Phoneme</name>
   <summary>Turn words into their true sounds</summary>
   <description>
-    <p>Word2IPA lets you look up individual words or paste entire phrases and see how they are pronounced in the IPA format. It's a perfect tool for language learners, linguists, or speech technology developers.</p>
+    <p>Phoneme lets you look up individual words or paste entire phrases and see how they are pronounced in the IPA format. It's a perfect tool for language learners, linguists, or speech technology developers.</p>
   </description>
 
   <developer id="tld.vendor">

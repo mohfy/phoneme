@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Word2IPA
+Name=Phoneme
 Comment=Convert words to IPA
 Exec=phoneme
 Icon=io.github.mohfy.phoneme
