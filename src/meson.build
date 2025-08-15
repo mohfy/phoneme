@@ -1,5 +1,5 @@
 pkgdatadir = get_option('prefix') / get_option('datadir') / meson.project_name()
-moduledir = pkgdatadir / 'word2ipa'
+moduledir = pkgdatadir / 'phoneme'
 gnome = import('gnome')
 
 blueprints = custom_target('blueprints',
@@ -12,8 +12,8 @@ blueprints = custom_target('blueprints',
 )
 
 
-gnome.compile_resources('word2ipa',
-  'word2ipa.gresource.xml',
+gnome.compile_resources('phoneme',
+  'phoneme.gresource.xml',
   gresource_bundle: true,
   install: true,
   install_dir: pkgdatadir,
@@ -29,18 +29,18 @@ conf.set('localedir', get_option('prefix') / get_option('localedir'))
 conf.set('pkgdatadir', pkgdatadir)
 
 configure_file(
-  input: 'word2ipa.in',
-  output: 'word2ipa',
+  input: 'phoneme.in',
+  output: 'phoneme',
   configuration: conf,
   install: true,
   install_dir: get_option('bindir'),
   install_mode: 'r-xr-xr-x'
 )
 
-word2ipa_sources = [
+phoneme_sources = [
   '__init__.py',
   'main.py',
   'window.py',
 ]
 
-install_data(word2ipa_sources, install_dir: moduledir)
+install_data(phoneme_sources, install_dir: moduledir)

@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=io.github.mohfy.word2ipa
-Exec=@bindir@/word2ipa --gapplication-service

@@ -1,1 +1,1 @@
-i18n.gettext('word2ipa', preset: 'glib')
+i18n.gettext('phoneme', preset: 'glib')

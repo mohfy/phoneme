@@ -1,4 +1,4 @@
-application_id = 'io.github.mohfy.word2ipa'
+application_id = 'io.github.mohfy.phoneme'
 
 scalable_dir = 'hicolor' / 'scalable' / 'apps'
 install_data(

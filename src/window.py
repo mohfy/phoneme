@@ -21,9 +21,9 @@ from gi.repository import Adw, Gtk, Gio, GObject, GLib
 import json
 import os
 
-@Gtk.Template(resource_path='/io/github/mohfy/word2ipa/window.ui')
-class Word2ipaWindow(Adw.ApplicationWindow):
-    __gtype_name__ = 'Word2ipaWindow'
+@Gtk.Template(resource_path='/io/github/mohfy/phoneme/window.ui')
+class PhonemeWindow(Adw.ApplicationWindow):
+    __gtype_name__ = 'PhonemeWindow'
     selected_lang = "en_US"
     ipa_dict_list = Gtk.Template.Child()
     word_text = Gtk.Template.Child()
@@ -39,7 +39,7 @@ class Word2ipaWindow(Adw.ApplicationWindow):
         self.init_template()
 
         # Load history from file
-        app_config_dir = os.path.join(GLib.get_user_config_dir(), "word2ipa")
+        app_config_dir = os.path.join(GLib.get_user_config_dir(), "phoneme")
         self.config_file_path = os.path.join(app_config_dir, "history.json")
         os.makedirs(app_config_dir, exist_ok=True)
 
@@ -63,7 +63,7 @@ class Word2ipaWindow(Adw.ApplicationWindow):
 
         # Init IPA Dictionary
         ipa_dict_json = Gio.resources_lookup_data(
-            "/io/github/mohfy/word2ipa/dicts/ipa_lookup_table.json",
+            "/io/github/mohfy/phoneme/dicts/ipa_lookup_table.json",
             Gio.ResourceLookupFlags.NONE
         ).get_data().decode("utf-8")
         ipa_data = json.loads(ipa_dict_json)
@@ -140,7 +140,7 @@ class Word2ipaWindow(Adw.ApplicationWindow):
             code = lang.split()[-1]
 
         resource_data = Gio.resources_lookup_data(
-            f"/io/github/mohfy/word2ipa/dicts/{code}.json",
+            f"/io/github/mohfy/phoneme/dicts/{code}.json",
             Gio.ResourceLookupFlags.NONE
         )
         current = word_text.get_text()

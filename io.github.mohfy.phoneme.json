@@ -1,9 +1,9 @@
 {
-    "id" : "io.github.mohfy.word2ipa",
+    "id" : "io.github.mohfy.phoneme",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "48",
     "sdk" : "org.gnome.Sdk",
-    "command" : "word2ipa",
+    "command" : "phoneme",
     "finish-args" : [
         "--share=ipc",
         "--socket=fallback-x11",
@@ -23,7 +23,7 @@
     ],
     "modules" : [
         {
-            "name" : "word2ipa",
+            "name" : "phoneme",
             "builddir" : true,
             "buildsystem" : "meson",
             "sources" : [

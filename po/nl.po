@@ -1,13 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the word2ipa package.
+# This file is distributed under the same license as the phoneme package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #: src/window.blp:99
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: word2ipa\n"
+"Project-Id-Version: phoneme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-03 20:12+0200\n"
 "PO-Revision-Date: 2025-08-03 21:28+0200\n"
@@ -19,27 +19,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.6\n"
 
-#: data/io.github.mohfy.word2ipa.desktop.in:2
+#: data/io.github.mohfy.phoneme.desktop.in:2
 msgid "Word2IPA"
 msgstr "Word2IPA"
 
-#: data/io.github.mohfy.word2ipa.desktop.in:3
+#: data/io.github.mohfy.phoneme.desktop.in:3
 msgid "Convert words to IPA"
 msgstr "Zet woorden om naar IPA"
 
-#: data/io.github.mohfy.word2ipa.desktop.in:9
+#: data/io.github.mohfy.phoneme.desktop.in:9
 msgid "IPA;dictionary;linguistics;"
 msgstr "IPA;fonetisch;woordenboek;taal;taalkunde;"
 
-#: data/io.github.mohfy.word2ipa.metainfo.xml.in:7
-msgid "Word2ipa"
-msgstr "Word2ipa"
+#: data/io.github.mohfy.phoneme.metainfo.xml.in:7
+msgid "Phoneme"
+msgstr "Phoneme"
 
-#: data/io.github.mohfy.word2ipa.metainfo.xml.in:8
+#: data/io.github.mohfy.phoneme.metainfo.xml.in:8
 msgid "Turn words into their true sounds"
 msgstr "Bekijk hoe woorden dienen te worden uitgesproken"
 
-#: data/io.github.mohfy.word2ipa.metainfo.xml.in:10
+#: data/io.github.mohfy.phoneme.metainfo.xml.in:10
 msgid ""
 "Word2IPA lets you look up individual words or paste entire phrases and see "
 "how they are pronounced in the IPA format. It's a perfect tool for language "
@@ -50,15 +50,15 @@ msgstr ""
 "Handig voor zij die een nieuwe taal willen leren, taalkundigen en "
 "ontwikkelaars van spraaktechnologie."
 
-#: data/io.github.mohfy.word2ipa.metainfo.xml.in:14
+#: data/io.github.mohfy.phoneme.metainfo.xml.in:14
 msgid "mohfy"
 msgstr "mohfy"
 
-#: data/io.github.mohfy.word2ipa.metainfo.xml.in:40
+#: data/io.github.mohfy.phoneme.metainfo.xml.in:40
 msgid "Home Page"
 msgstr "Website"
 
-#: data/io.github.mohfy.word2ipa.metainfo.xml.in:44
+#: data/io.github.mohfy.phoneme.metainfo.xml.in:44
 msgid "IPA Dictionary"
 msgstr "IPA-woordenboek"
 
@@ -104,5 +104,5 @@ msgid "_Keyboard Shortcuts"
 msgstr "_Sneltoetsen"
 
 #: src/window.blp:149
-msgid "_About Word2ipa"
+msgid "_About Phoneme"
 msgstr "Over Word2ip_a"

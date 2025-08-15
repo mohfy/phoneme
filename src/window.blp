@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $Word2ipaWindow : Adw.ApplicationWindow {
+template $PhonemeWindow : Adw.ApplicationWindow {
   title: _("Word2Ipa");
   width-request: 800;
   height-request: 600;
@@ -153,7 +153,7 @@ menu primary_menu {
       action: "win.show-help-overlay";
     }
     item {
-      label: _("_About Word2ipa");
+      label: _("_About Phoneme");
       action: "app.about";
     }
   }

@@ -1,8 +1,8 @@
 [Desktop Entry]
 Name=Word2IPA
 Comment=Convert words to IPA
-Exec=word2ipa
-Icon=io.github.mohfy.word2ipa
+Exec=phoneme
+Icon=io.github.mohfy.phoneme
 Terminal=false
 Type=Application
 Categories=Utility;

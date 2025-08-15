@@ -24,16 +24,16 @@ gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 
 from gi.repository import Gtk, Gio, Adw
-from .window import Word2ipaWindow
+from .window import PhonemeWindow
 
 
-class Word2ipaApplication(Adw.Application):
+class PhonemeApplication(Adw.Application):
     """The main application singleton class."""
 
     def __init__(self):
-        super().__init__(application_id='io.github.mohfy.word2ipa',
+        super().__init__(application_id='io.github.mohfy.phoneme',
                          flags=Gio.ApplicationFlags.DEFAULT_FLAGS,
-                         resource_base_path='/io/github/mohfy/word2ipa')
+                         resource_base_path='/io/github/mohfy/phoneme')
         self.create_action('quit', lambda *_: self.quit(), ['<primary>q'])
         self.create_action('about', self.on_about_action)
         self.create_action('preferences', self.on_preferences_action)
@@ -46,7 +46,7 @@ class Word2ipaApplication(Adw.Application):
         """
         win = self.props.active_window
         if not win:
-            win = Word2ipaWindow(application=self)
+            win = PhonemeWindow(application=self)
         win.present()
 
     def on_about_action(self, *args):
@@ -58,16 +58,16 @@ class Word2ipaApplication(Adw.Application):
         debug_info += (
             f"libadwaita {Adw.MAJOR_VERSION}.{Adw.MINOR_VERSION}.{Adw.MICRO_VERSION}\n"
         )
-        about = Adw.AboutDialog(application_name='word2ipa',
-                                application_icon='io.github.mohfy.word2ipa',
+        about = Adw.AboutDialog(application_name='phoneme',
+                                application_icon='io.github.mohfy.phoneme',
                                 developer_name='mohfy',
                                 version='1.2.5',
                                 developers=['mohfy'],
                                 copyright='© 2025 mohfy',
                                 debug_info=debug_info,
                                 license_type=Gtk.License.GPL_3_0,
-                                issue_url='https://github.com/mohfy/word2ipa/issues',
-                                website='https://github.com/mohfy/word2ipa')
+                                issue_url='https://github.com/mohfy/phoneme/issues',
+                                website='https://github.com/mohfy/phoneme')
         # Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
         about.set_translator_credits(_('translator-credits'))
         about.present(self.props.active_window)
@@ -94,5 +94,5 @@ class Word2ipaApplication(Adw.Application):
 
 def main(version):
     """The application's entry point."""
-    app = Word2ipaApplication()
+    app = PhonemeApplication()
     return app.run(sys.argv)

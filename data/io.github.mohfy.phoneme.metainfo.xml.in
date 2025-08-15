@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>io.github.mohfy.word2ipa</id>
+  <id>io.github.mohfy.phoneme</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
 
@@ -15,39 +15,39 @@
   </developer>
 
   <!-- Required: Should be a link to the upstream homepage for the component -->
-  <url type="homepage">https://github.com/mohfy/word2ipa/</url>
+  <url type="homepage">https://github.com/mohfy/phoneme/</url>
   <!-- Recommended: It is highly recommended for open-source projects to display the source code repository -->
-  <url type="vcs-browser">https://github.com/mohfy/word2ipa/repository</url>
+  <url type="vcs-browser">https://github.com/mohfy/phoneme/repository</url>
   <!-- Should point to the software's bug tracking system, for users to report new bugs -->
-  <url type="bugtracker">https://github.com/mohfy/word2ipa/issues</url>
+  <url type="bugtracker">https://github.com/mohfy/phoneme/issues</url>
 
-  <translation type="gettext">word2ipa</translation>
+  <translation type="gettext">phoneme</translation>
   <!-- All graphical applications having a desktop file must have this tag in the MetaInfo.
      If this is present, appstreamcli compose will pull icons, keywords and categories from the desktop file. -->
-  <launchable type="desktop-id">io.github.mohfy.word2ipa.desktop</launchable>
+  <launchable type="desktop-id">io.github.mohfy.phoneme.desktop</launchable>
   <!-- Use the OARS website (https://hughsie.github.io/oars/generate.html) to generate these and make sure to use oars-1.1 -->
   <content_rating type="oars-1.1" />
 
   <!-- Applications should set a brand color in both light and dark variants like so -->
   <branding>
-    <color type="primary" scheme_preference="light">#F7F9FA</color>
-    <color type="primary" scheme_preference="dark">#0A2540</color>
+    <color type="primary" scheme_preference="light">#8FF0A4</color>
+    <color type="primary" scheme_preference="dark">#57E389</color>
   </branding>
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/mohfy/word2ipa/703816e1bbec07e8011615ab55dd2192e1b59878/screenshots/transcriber.png</image>
+      <image>https://raw.githubusercontent.com/mohfy/phoneme/703816e1bbec07e8011615ab55dd2192e1b59878/screenshots/transcriber.png</image>
       <caption>Home Page</caption>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/mohfy/word2ipa/703816e1bbec07e8011615ab55dd2192e1b59878/screenshots/ipa-lookup.png</image>
+      <image>https://raw.githubusercontent.com/mohfy/phoneme/703816e1bbec07e8011615ab55dd2192e1b59878/screenshots/ipa-lookup.png</image>
       <caption>IPA Lookup</caption>
     </screenshot>
   </screenshots>
 
   <releases>
     <release version="1.2.5" date="2025-08-8">
-      <url type="details">https://github.com/mohfy/word2ipa/releases/tag/v1.2.5</url>
+      <url type="details">https://github.com/mohfy/phoneme/releases/tag/v1.2.5</url>
       <description translate="no">
         <p>Are we satisfied yet?</p>
         <ul>
@@ -57,7 +57,7 @@
       </description>
     </release>
     <release version="1.2.0" date="2025-08-3">
-      <url type="details">https://github.com/mohfy/word2ipa/releases/tag/v1.2.0</url>
+      <url type="details">https://github.com/mohfy/phoneme/releases/tag/v1.2.0</url>
       <description translate="no">
         <p>Made some history</p>
         <ul>
@@ -69,7 +69,7 @@
       </description>
     </release>
     <release version="1.1.1" date="2025-08-3">
-      <url type="details">https://github.com/mohfy/word2ipa/releases/tag/v1.1.1</url>
+      <url type="details">https://github.com/mohfy/phoneme/releases/tag/v1.1.1</url>
       <description translate="no">
         <p>Bugs</p>
         <ul>
@@ -78,7 +78,7 @@
       </description>
     </release>
     <release version="1.1.0" date="2025-08-3">
-      <url type="details">https://github.com/mohfy/word2ipa/releases/tag/v1.1.0</url>
+      <url type="details">https://github.com/mohfy/phoneme/releases/tag/v1.1.0</url>
       <description translate="no">
         <p>Better UI update</p>
         <ul>
@@ -91,7 +91,7 @@
     </release>
 
     <release version="1.0.0" date="2024-01-18">
-      <url type="details">https://github.com/mohfy/word2ipa/releases/tag/v1.0.0</url>
+      <url type="details">https://github.com/mohfy/phoneme/releases/tag/v1.0.0</url>
       <description translate="no">
         <p>new update!</p>
         <ul>
