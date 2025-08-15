@@ -20,8 +20,8 @@ msgstr ""
 "X-Generator: Poedit 3.6\n"
 
 #: data/io.github.mohfy.phoneme.desktop.in:2
-msgid "Word2IPA"
-msgstr "Word2IPA"
+msgid "Phoneme"
+msgstr "Phoneme"
 
 #: data/io.github.mohfy.phoneme.desktop.in:3
 msgid "Convert words to IPA"
@@ -41,11 +41,11 @@ msgstr "Bekijk hoe woorden dienen te worden uitgesproken"
 
 #: data/io.github.mohfy.phoneme.metainfo.xml.in:10
 msgid ""
-"Word2IPA lets you look up individual words or paste entire phrases and see "
+"Phoneme lets you look up individual words or paste entire phrases and see "
 "how they are pronounced in the IPA format. It's a perfect tool for language "
 "learners, linguists, or speech technology developers."
 msgstr ""
-"Met Word2IPA kunt u woorden of zinnen opzoeken en zien hoe ze dienen te "
+"Met Phoneme kunt u woorden of zinnen opzoeken en zien hoe ze dienen te "
 "worden uitgesproken volgens het Internationaal Fonetisch Alfabet (IPA). "
 "Handig voor zij die een nieuwe taal willen leren, taalkundigen en "
 "ontwikkelaars van spraaktechnologie."
@@ -68,8 +68,8 @@ msgid "translator-credits"
 msgstr "Heimen Stoffels <vistausss@fastmail.com>"
 
 #: src/window.blp:5 src/window.blp:40
-msgid "Word2Ipa"
-msgstr "Word2Ipa"
+msgid "Phoneme"
+msgstr "Phoneme"
 
 #: src/window.blp:30
 msgid "Main Menu"
